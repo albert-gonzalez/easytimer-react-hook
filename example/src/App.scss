@@ -1,0 +1,42 @@
+@import '../../node_modules/bulma/bulma.sass';
+
+@font-face {
+    font-family: digital7;
+    src: url(./fonts/digital-7-mono.ttf);
+}
+
+.timer {
+    background-color: $black-ter;
+    font-family: digital7, 'Courier New', Courier, monospace;
+    font-size: 12vw;
+    color: $grey-light;
+    min-height: 200px;
+
+    @include desktop {
+        font-size: 7vw;
+    }
+}
+
+.checkbox-label {
+    white-space: nowrap;
+}
+
+.field {
+    &.checkbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .checkbox {
+        margin-top: 5px;
+    }
+}
+
+#root {
+    min-height: 200px;
+
+    @include desktop {
+        min-height: 720px;
+    }
+}
