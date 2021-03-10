@@ -75,6 +75,6 @@ declare const useTimer: ({
     target,
     precision,
     countdown,
-    updateOnTargetAchieved,
+    updateWhenTargetAchieved,
 }?: TimerHookConfig) => TimerHookReturn;
 ```

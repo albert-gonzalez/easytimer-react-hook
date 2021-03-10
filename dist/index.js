@@ -1,7 +1,7 @@
 /**
  * easytimer-react-hook
  * Generated: 2021-03-10
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
 (function (global, factory) {
@@ -11,7 +11,7 @@
 }(this, (function (exports, react, easytimer_js) { 'use strict';
 
     var useTimer = function (_a) {
-        var _b = _a === void 0 ? {} : _a, startValues = _b.startValues, target = _b.target, precision = _b.precision, countdown = _b.countdown, updateOnTargetAchieved = _b.updateOnTargetAchieved;
+        var _b = _a === void 0 ? {} : _a, startValues = _b.startValues, target = _b.target, precision = _b.precision, countdown = _b.countdown, updateWhenTargetAchieved = _b.updateWhenTargetAchieved;
         var updateCallback = function (timer) {
             setTimerValues(timer.getTimeValues().toString(unitsToSave));
         };
@@ -23,7 +23,7 @@
         var addListeners = function () {
             timer.on('started', onStarted);
             timer.on('reset', onStarted);
-            if (updateOnTargetAchieved) {
+            if (updateWhenTargetAchieved) {
                 timer.on('targetAchieved', onTargetAchieved);
             }
         };
@@ -45,7 +45,7 @@
         react.useEffect(function () {
             addListeners();
             return function () { return removeListeners(); };
-        }, [updateOnTargetAchieved]);
+        }, [updateWhenTargetAchieved]);
         react.useEffect(function () {
             return function () {
                 timer.stop();
