@@ -13,7 +13,7 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
         "@rollup/plugin-commonjs": "^17.1.0",
         "@rollup/plugin-node-resolve": "^11.2.0",
