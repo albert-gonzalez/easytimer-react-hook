@@ -1,4 +1,4 @@
-import { uglify } from 'rollup-plugin-uglify';
+import terser from 'rollup-plugin-terser';
 import license from 'rollup-plugin-license';
 import typescript from 'rollup-plugin-typescript2';
 
@@ -7,6 +7,7 @@ let optimize = process.env.optimize || false;
 
 export default {
     input: 'src/index.ts',
+    external: ['react', 'easytimer.js'],
     output: {
         format: 'umd',
         name: 'easytimer-react-hook',
@@ -19,7 +20,7 @@ export default {
     },
     plugins: [
         typescript(),
-        optimize ? uglify() : {},
+        optimize ? terser() : {},
         license({
             banner: `
         <%= pkg.name %>
