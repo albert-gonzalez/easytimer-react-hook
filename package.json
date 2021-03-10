@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "dist/index.min.js",
-    "types": "dist/index.d.ts",
+    "types": "dist/src/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "npm run build-lib && npm run build-examples",
