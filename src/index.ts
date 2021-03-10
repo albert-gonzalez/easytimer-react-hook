@@ -6,7 +6,7 @@ interface TimerHookConfig {
     target?: TimerValues;
     precision?: Precision;
     countdown?: boolean;
-    updateOnTargetAchieved?: boolean;
+    updateWhenTargetAchieved?: boolean;
 }
 
 type TimerHookReturn = [Timer, boolean];
@@ -16,7 +16,7 @@ const useTimer = ({
     target,
     precision,
     countdown,
-    updateOnTargetAchieved,
+    updateWhenTargetAchieved,
 }: TimerHookConfig = {}): TimerHookReturn => {
     const updateCallback = (timer: Timer) => {
         setTimerValues(timer.getTimeValues().toString(unitsToSave));
@@ -33,7 +33,7 @@ const useTimer = ({
         timer.on('started', onStarted);
         timer.on('reset', onStarted);
 
-        if (updateOnTargetAchieved) {
+        if (updateWhenTargetAchieved) {
             timer.on('targetAchieved', onTargetAchieved);
         }
     };
@@ -61,7 +61,7 @@ const useTimer = ({
         addListeners();
 
         return () => removeListeners();
-    }, [updateOnTargetAchieved]);
+    }, [updateWhenTargetAchieved]);
 
     useEffect(() => {
         return () => {

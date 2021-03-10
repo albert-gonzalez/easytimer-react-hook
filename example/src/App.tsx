@@ -27,8 +27,8 @@ export default (): JSX.Element => {
     const [isTargetEnabled, setIsTargetEnabled] = useState(false);
     const [isCountdown, setIsCountdown] = useState(false);
     const [precision, setPrecision] = useState('seconds' as Precision);
-    const [updateOnTargetAchieved, setUpdateOnTargetAchieved] = useState(false);
-    const [timer, isTargetAchieved] = useTimer({ updateOnTargetAchieved });
+    const [updateWhenTargetAchieved, setUpdateWhenTargetAchieved] = useState(false);
+    const [timer, isTargetAchieved] = useTimer({ updateWhenTargetAchieved });
 
     return (
         <div className="columns is-multiline is-gapless">
@@ -68,9 +68,9 @@ export default (): JSX.Element => {
                             </div>
                             <div className="column">
                                 <Checkbox
-                                    label="Update on target achieved"
-                                    checked={updateOnTargetAchieved}
-                                    onChange={(e) => setUpdateOnTargetAchieved(e.currentTarget.checked)}
+                                    label="Update when target achieved"
+                                    checked={updateWhenTargetAchieved}
+                                    onChange={(e) => setUpdateWhenTargetAchieved(e.currentTarget.checked)}
                                     disabled={!isTargetEnabled}
                                 />
                             </div>
