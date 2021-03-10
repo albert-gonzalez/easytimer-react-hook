@@ -42,6 +42,6 @@ export default {
                 { src: 'example/images/**/*.png', dest: 'example/dist/images' },
             ],
         }),
-        !isProd && serve('example'),
+        !isProd && serve('.'),
     ],
 };

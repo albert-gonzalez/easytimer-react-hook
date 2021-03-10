@@ -31,12 +31,12 @@ export default (): JSX.Element => {
     const [timer, isTargetAchieved] = useTimer({ updateOnTargetAchieved });
 
     return (
-        <div className="columns is-multiline my-0">
+        <div className="columns is-multiline is-gapless">
             <div className="column is-full is-half-desktop is-three-fifths-fullhd ">
                 <Timer isTargetAchieved={isTargetAchieved} timeValues={timer.getTimeValues()} />
             </div>
 
-            <div className="column">
+            <div className="column mt-5">
                 <div className="container is-fluid">
                     <div>
                         <h4 className="title is-5">Controls</h4>
