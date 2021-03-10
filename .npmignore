@@ -6,4 +6,5 @@ rollup.config.js
 rollup.example.config.js
 .gitignore
 test/*
-
+.husky/*
+.eslintcache

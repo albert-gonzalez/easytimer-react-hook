@@ -8,7 +8,7 @@
 npm install --save-dev easytimer-react-hook
 ```
 
-This hook needs React (> v16.8) and EasyTimer.js (>v4) in order to work:
+This hook needs React (>= v16.8) and EasyTimer.js (>= v4) in order to work:
 
 ```sh
 npm install --save-dev easytimer.js react

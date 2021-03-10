@@ -9,7 +9,9 @@
         "build": "npm run build-lib && npm run build-examples",
         "build-lib": "rollup -c && rollup -c --environment environment:production",
         "build-examples": "rollup -c rollup.example.config.js --environment environment:production",
-        "dev": "rollup -c rollup.example.config.js -w"
+        "dev": "rollup -c rollup.example.config.js -w",
+        "prepare": "husky install",
+        "lint-staged": "lint-staged"
     },
     "keywords": [
         "stopwatch",
@@ -37,6 +39,8 @@
         "eslint": "^7.21.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-react": "^7.22.0",
+        "husky": "^5.1.3",
+        "lint-staged": "^10.5.4",
         "prettier": "2.2.1",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
@@ -49,5 +53,9 @@
         "rollup-plugin-typescript2": "^0.30.0",
         "tslib": "^2.1.0",
         "typescript": "^4.2.3"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": "eslint --cache --fix",
+        "*.{ts,tsx,scss,md}": "prettier --write"
     }
 }
