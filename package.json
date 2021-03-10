@@ -1,7 +1,7 @@
 {
     "name": "easytimer-react-hook",
     "version": "1.0.0",
-    "description": "",
+    "description": "EasyTimer React Hook",
     "main": "dist/index.min.js",
     "types": "dist/src/index.d.ts",
     "scripts": {
@@ -11,9 +11,19 @@
         "build-examples": "rollup -c rollup.example.config.js --environment environment:production",
         "dev": "rollup -c rollup.example.config.js -w"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "stopwatch",
+        "countdown",
+        "timer",
+        "react hook",
+        "easytimer"
+    ],
+    "author": "Albert González",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/albert-gonzalez/easytimer-react-hook"
+    },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^17.1.0",
         "@rollup/plugin-node-resolve": "^11.2.0",
