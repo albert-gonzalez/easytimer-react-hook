@@ -18,5 +18,6 @@
         }
     },
     "plugins": ["react", "@typescript-eslint"],
+    "ignorePatterns": ["dist"],
     "rules": {}
 }

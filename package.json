@@ -2,11 +2,13 @@
     "name": "easytimer-react-hook",
     "version": "1.0.0",
     "description": "",
-    "main": "dist/index.js",
+    "main": "dist/index.min.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "rollup -c",
+        "build": "npm run build-lib && npm run build-examples",
+        "build-lib": "rollup -c && rollup -c --environment environment:production",
+        "build-examples": "rollup -c rollup.example.config.js --environment environment:production",
         "dev": "rollup -c rollup.example.config.js -w"
     },
     "keywords": [],

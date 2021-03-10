@@ -1,9 +1,10 @@
-import terser from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser';
 import license from 'rollup-plugin-license';
 import typescript from 'rollup-plugin-typescript2';
 
 // eslint-disable-next-line no-undef
-let optimize = process.env.optimize || false;
+const environment = process.env.environment || 'development';
+const isProd = environment === 'production';
 
 export default {
     input: 'src/index.ts',
@@ -11,7 +12,7 @@ export default {
     output: {
         format: 'umd',
         name: 'easytimer-react-hook',
-        file: `dist/index${optimize ? '.min' : ''}.js`,
+        file: `dist/index${isProd ? '.min' : ''}.js`,
         exports: 'named',
         globals: {
             react: 'React',
@@ -20,7 +21,7 @@ export default {
     },
     plugins: [
         typescript(),
-        optimize ? terser() : {},
+        isProd ? terser() : {},
         license({
             banner: `
         <%= pkg.name %>

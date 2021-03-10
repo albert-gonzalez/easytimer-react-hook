@@ -1,4 +1,4 @@
-import terser from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser';
 import license from 'rollup-plugin-license';
 import typescript from 'rollup-plugin-typescript2';
 import serve from 'rollup-plugin-serve';
@@ -16,15 +16,15 @@ export default {
     input: 'example/src/index.tsx',
     output: {
         format: 'iife',
-        file: `example/dist/index${isProd ? '.min' : ''}.js`,
+        file: `example/dist/index.js`,
     },
     external: [],
     plugins: [
         resolve(),
         commonjs(),
-        scss(),
+        scss({ outputStyle: isProd ? 'compressed' : 'nested' }),
         typescript({ tsconfigOverride: { compilerOptions: { declaration: false } } }),
-        isProd ? terser() : {},
+        isProd && terser(),
         license({
             banner: `
         <%= pkg.name %>
@@ -42,6 +42,6 @@ export default {
                 { src: 'example/images/**/*.png', dest: 'example/dist/images' },
             ],
         }),
-        serve('example'),
+        !isProd && serve('example'),
     ],
 };
