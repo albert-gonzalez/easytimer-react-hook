@@ -3,11 +3,38 @@ import { TimeValues } from '../types';
 
 interface ValuesSelectorInput {
     timeValues: TimeValues;
-    changeTimeValues: (e: ChangeEvent<HTMLInputElement>, valueType: string) => void;
     disabled?: boolean;
+    values: TimeValues;
+    setFunction: (value: React.SetStateAction<TimeValues>) => void;
 }
 
-export default function ValuesSelector({ timeValues, changeTimeValues, disabled }: ValuesSelectorInput): JSX.Element {
+export default function ValuesSelector({
+    timeValues,
+    disabled,
+    values,
+    setFunction,
+}: ValuesSelectorInput): JSX.Element {
+    const changeTimeValue = (
+        e: ChangeEvent<HTMLInputElement>,
+        valueType: string,
+        values: TimeValues,
+        setFunction: (value: React.SetStateAction<TimeValues>) => void
+    ) => {
+        let value = Math.min(
+            Math.max(parseInt(e.currentTarget.value), parseInt(e.currentTarget.min)),
+            parseInt(e.currentTarget.max)
+        );
+
+        if (isNaN(value)) {
+            value = 0;
+        }
+
+        setFunction({
+            ...values,
+            [valueType]: value,
+        });
+    };
+
     return (
         <div className="columns is-mobile is-multiline">
             <div className="field column is-half-mobile">
@@ -19,7 +46,7 @@ export default function ValuesSelector({ timeValues, changeTimeValues, disabled 
                         value={timeValues.days}
                         min="0"
                         max="1000"
-                        onChange={(e) => changeTimeValues(e, 'days')}
+                        onChange={(e) => changeTimeValue(e, 'days', values, setFunction)}
                         disabled={disabled}
                     />
                 </div>
@@ -33,7 +60,7 @@ export default function ValuesSelector({ timeValues, changeTimeValues, disabled 
                         value={timeValues.hours}
                         min="0"
                         max="23"
-                        onChange={(e) => changeTimeValues(e, 'hours')}
+                        onChange={(e) => changeTimeValue(e, 'hours', values, setFunction)}
                         disabled={disabled}
                     />
                 </div>
@@ -47,7 +74,7 @@ export default function ValuesSelector({ timeValues, changeTimeValues, disabled 
                         value={timeValues.minutes}
                         min="0"
                         max="59"
-                        onChange={(e) => changeTimeValues(e, 'minutes')}
+                        onChange={(e) => changeTimeValue(e, 'minutes', values, setFunction)}
                         disabled={disabled}
                     />
                 </div>
@@ -61,7 +88,7 @@ export default function ValuesSelector({ timeValues, changeTimeValues, disabled 
                         value={timeValues.seconds}
                         min="0"
                         max="59"
-                        onChange={(e) => changeTimeValues(e, 'seconds')}
+                        onChange={(e) => changeTimeValue(e, 'seconds', values, setFunction)}
                         disabled={disabled}
                     />
                 </div>

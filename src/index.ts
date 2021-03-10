@@ -19,7 +19,6 @@ const useTimer = ({
     updateOnTargetAchieved,
 }: TimerHookConfig = {}): TimerHookReturn => {
     const updateCallback = (timer: Timer) => {
-        console.log('set');
         setTimerValues(timer.getTimeValues().toString(unitsToSave));
     };
 
@@ -58,23 +57,16 @@ const useTimer = ({
     const [, setTimerValues] = useState(timer.getTimeValues().toString(unitsToSave));
     const [isTargetAchieved, setIsTargetAchieved] = useState(false);
 
-    console.log('useTimer');
-
     useEffect(() => {
-        console.log('effect', timer.getTimeValues().toString());
         addListeners();
 
         return () => removeListeners();
     }, [updateOnTargetAchieved]);
 
     useEffect(() => {
-        console.log('effect unmount', timer.getTimeValues().toString());
-
         return () => {
-            console.log('return');
-            removeListeners();
-
             timer.stop();
+            removeListeners();
         };
     }, []);
 

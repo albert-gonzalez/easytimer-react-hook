@@ -24,8 +24,6 @@
         "easytimer.js": "^4.3.2",
         "eslint": "^7.21.0",
         "eslint-config-prettier": "^8.1.0",
-        "eslint-config-standard": "^16.0.2",
-        "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-react": "^7.22.0",
         "prettier": "2.2.1",
         "react": "^17.0.1",

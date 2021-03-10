@@ -2,6 +2,7 @@ import { uglify } from 'rollup-plugin-uglify';
 import license from 'rollup-plugin-license';
 import typescript from 'rollup-plugin-typescript2';
 
+// eslint-disable-next-line no-undef
 let optimize = process.env.optimize || false;
 
 export default {
