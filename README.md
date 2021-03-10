@@ -16,7 +16,7 @@ npm install --save-dev easytimer.js react
 
 ## Example
 
-You can see a working example of this hook here: https://github.com ([Source Code](./example))
+You can see a working example of this hook here: https://albert-gonzalez.github.io/easytimer-react-hook ([Source Code](./example))
 
 ## Usage
 
@@ -43,11 +43,11 @@ export default () => {
 
 useTimer hook accepts an object with the following options:
 
--   startValues: Optional. Object with the start values. The keys of these object are days, hours, minutes, seconds and secondTenths. The default value makes the timer to start from 0;
--   target: Optional. Object with the target. When the timer achieves the target, it will stop automatically. The keys of these object are days, hours, minutes, seconds and secondTenths. If no target is passed, it will be disabled;
--   precision: Optional. The frequency that the timer will update the component. The accepted precisions are: hours, minutes, seconds and secondTenths. The default value is seconds;
--   countdown: Optional. If true the timer will be a countdown. The default value is false;
--   updateOnTargetAchieved. Optional. If true the hook will update the component when the target is achieved. The default value is false;
+-   **startValues:** Optional. Object with the start values. The keys of these object are days, hours, minutes, seconds and secondTenths. The default value makes the timer to start from 0;
+-   **target:** Optional. Object with the target. When the timer achieves the target, it will stop automatically. The keys of these object are days, hours, minutes, seconds and secondTenths. If no target is passed, it will be disabled;
+-   **precision:** Optional. The frequency that the timer will update the component. The accepted precisions are: hours, minutes, seconds and secondTenths. The default value is seconds;
+-   **countdown:** Optional. If true the timer will be a countdown. The default value is false;
+-   **updateOnTargetAchieved:** Optional. If true the hook will update the component when the target is achieved. The default value is false;
 
 ### EasyTimer instance
 
