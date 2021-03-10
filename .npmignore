@@ -1,0 +1,9 @@
+example/*
+dist/example/*
+.github/*
+index.html
+rollup.config.js
+rollup.example.config.js
+.gitignore
+test/*
+
