@@ -18,6 +18,8 @@ const useTimer = ({
     countdown,
     updateWhenTargetAchieved,
 }: TimerHookConfig = {}): TimerHookReturn => {
+    const unitsToSave = ['days', 'hours', 'minutes', 'seconds', 'secondTenths'];
+
     const updateCallback = (timer: Timer) => {
         setTimerValues(timer.getTimeValues().toString(unitsToSave));
     };
@@ -44,7 +46,6 @@ const useTimer = ({
         timer.off('targetAchieved', onTargetAchieved);
     };
 
-    const unitsToSave = ['days', 'hours', 'minutes', 'seconds', 'secondTenths'];
     const [timer] = useState(
         new Timer({
             startValues,
