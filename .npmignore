@@ -1,5 +1,6 @@
 example/*
 dist/example/*
+dist/test/*
 .github/*
 index.html
 rollup.config.js

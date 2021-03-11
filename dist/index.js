@@ -1,7 +1,7 @@
 /**
  * easytimer-react-hook
- * Generated: 2021-03-10
- * Version: 1.0.1
+ * Generated: 2021-03-11
+ * Version: 1.0.2
  */
 
 (function (global, factory) {
@@ -12,6 +12,7 @@
 
     var useTimer = function (_a) {
         var _b = _a === void 0 ? {} : _a, startValues = _b.startValues, target = _b.target, precision = _b.precision, countdown = _b.countdown, updateWhenTargetAchieved = _b.updateWhenTargetAchieved;
+        var unitsToSave = ['days', 'hours', 'minutes', 'seconds', 'secondTenths'];
         var updateCallback = function (timer) {
             setTimerValues(timer.getTimeValues().toString(unitsToSave));
         };
@@ -32,7 +33,6 @@
             timer.off('reset', onStarted);
             timer.off('targetAchieved', onTargetAchieved);
         };
-        var unitsToSave = ['days', 'hours', 'minutes', 'seconds', 'secondTenths'];
         var timer = react.useState(new easytimer_js.Timer({
             startValues: startValues,
             target: target,
