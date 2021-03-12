@@ -1,7 +1,7 @@
 /**
  * easytimer-react-hook
- * Generated: 2021-03-11
- * Version: 1.0.2
+ * Generated: 2021-03-12
+ * Version: 1.0.3
  */
 
 !function(){"use strict";"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self;function e(e){var t={exports:{}};return e(t,t.exports),t.exports
