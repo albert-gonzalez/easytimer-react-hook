@@ -1,14 +1,14 @@
 /**
  * easytimer-react-hook
- * Generated: 2021-03-12
- * Version: 1.0.3
+ * Generated: 2022-02-12
+ * Version: 2.0.0
  */
 
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('easytimer.js')) :
     typeof define === 'function' && define.amd ? define(['exports', 'react', 'easytimer.js'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['easytimer-react-hook'] = {}, global.React, global.easytimer));
-}(this, (function (exports, react, easytimer_js) { 'use strict';
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["easytimer-react-hook"] = {}, global.React, global.easytimer));
+})(this, (function (exports, react, easytimer_js) { 'use strict';
 
     var useTimer = function (_a) {
         var _b = _a === void 0 ? {} : _a, startValues = _b.startValues, target = _b.target, precision = _b.precision, countdown = _b.countdown, updateWhenTargetAchieved = _b.updateWhenTargetAchieved;
@@ -55,8 +55,8 @@
         return [timer, isTargetAchieved];
     };
 
-    exports.default = useTimer;
+    exports["default"] = useTimer;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
