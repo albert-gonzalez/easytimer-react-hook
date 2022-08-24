@@ -1,6 +1,6 @@
 {
     "name": "easytimer-react-hook",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "React Hook that creates a timer using EasyTimer lib",
     "main": "dist/index.min.js",
     "types": "dist/src/index.d.ts",

@@ -1,7 +1,7 @@
 /**
  * easytimer-react-hook
- * Generated: 2022-02-12
- * Version: 2.0.0
+ * Generated: 2022-08-24
+ * Version: 2.0.2
  */
 
 (function (global, factory) {
