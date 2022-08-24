@@ -9,7 +9,7 @@ import Timer from './components/Timer';
 import Buttons from './components/Buttons';
 import PrecisionSelector from './components/PrecisionSelector';
 
-export default (): JSX.Element => {
+const App = (): JSX.Element => {
     const [startValues, setStartValues] = useState({
         days: 0,
         hours: 0,
@@ -109,3 +109,5 @@ export default (): JSX.Element => {
         </div>
     );
 };
+
+export default App;

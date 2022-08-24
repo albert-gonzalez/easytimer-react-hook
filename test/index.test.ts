@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 import Timer from 'easytimer.js';
 import useTimer from '../src';
 import sinon, { SinonFakeTimers } from 'sinon';
