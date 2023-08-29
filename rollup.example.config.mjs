@@ -22,7 +22,7 @@ export default {
     plugins: [
         resolve(),
         commonjs(),
-        scss({ outputStyle: isProd ? 'compressed' : 'expanded' }),
+        scss({ outputStyle: isProd ? 'compressed' : 'expanded', fileName: 'index.css' }),
         typescript({ tsconfigOverride: { compilerOptions: { declaration: false } } }),
         isProd && terser(),
         license({
