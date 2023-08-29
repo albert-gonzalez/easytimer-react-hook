@@ -1,7 +1,7 @@
 /**
  * easytimer-react-hook
- * Generated: 2022-08-24
- * Version: 2.0.2
+ * Generated: 2023-08-29
+ * Version: 2.1.0
  */
 
 (function (global, factory) {
@@ -55,7 +55,7 @@
         return [timer, isTargetAchieved];
     };
 
-    exports["default"] = useTimer;
+    exports.default = useTimer;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

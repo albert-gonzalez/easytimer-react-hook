@@ -6,6 +6,6 @@ interface TimerHookConfig {
     countdown?: boolean;
     updateWhenTargetAchieved?: boolean;
 }
-declare type TimerHookReturn = [Timer, boolean];
+type TimerHookReturn = [Timer, boolean];
 declare const useTimer: ({ startValues, target, precision, countdown, updateWhenTargetAchieved, }?: TimerHookConfig) => TimerHookReturn;
 export default useTimer;
