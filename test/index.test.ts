@@ -1,14 +1,11 @@
 import { act, renderHook } from '@testing-library/react';
 import Timer from 'easytimer.js';
 import useTimer from '../src';
-import sinon, { SinonFakeTimers } from 'sinon';
 
 describe('useTimer hook', () => {
-    let clock: SinonFakeTimers;
+    beforeEach(() => jest.useFakeTimers());
 
-    beforeEach(() => (clock = sinon.useFakeTimers()));
-
-    afterEach(() => clock.restore());
+    afterEach(() => jest.restoreAllMocks());
 
     test('should return an EasyTimer instance and the isTargetAchieved indicator (boolean)', () => {
         const { result } = renderHook(() => useTimer());
@@ -32,7 +29,7 @@ describe('useTimer hook', () => {
 
     test('should configure the start values', () => {
         const { result } = renderHook(() =>
-            useTimer({ startValues: { secondTenths: 1, seconds: 10, minutes: 20, hours: 21, days: 35 } })
+            useTimer({ startValues: { secondTenths: 1, seconds: 10, minutes: 20, hours: 21, days: 35 } }),
         );
         const [timer] = result.current;
 
@@ -41,7 +38,7 @@ describe('useTimer hook', () => {
 
     test('should configure the target values', () => {
         const { result } = renderHook(() =>
-            useTimer({ target: { secondTenths: 1, seconds: 10, minutes: 20, hours: 21, days: 35 } })
+            useTimer({ target: { secondTenths: 1, seconds: 10, minutes: 20, hours: 21, days: 35 } }),
         );
         const [timer] = result.current;
 
@@ -74,7 +71,7 @@ describe('useTimer hook', () => {
             const [timer] = result.current;
             timer.start();
 
-            clock.tick(2400);
+            jest.advanceTimersByTime(2400);
         });
 
         const timeValues = result.current[0].getTimeValues();
@@ -92,7 +89,7 @@ describe('useTimer hook', () => {
             const [timer] = result.current;
             timer.start();
 
-            clock.tick(2000);
+            jest.advanceTimersByTime(2000);
         });
 
         expect(result.current[1]).toBeTruthy();
@@ -107,7 +104,7 @@ describe('useTimer hook', () => {
             const [timer] = result.current;
             timer.start();
 
-            clock.tick(2000);
+            jest.advanceTimersByTime(2000);
         });
 
         expect(result.current[1]).toBeFalsy();
@@ -118,14 +115,14 @@ describe('useTimer hook', () => {
             (updateWhenTargetAchieved: boolean) => {
                 return useTimer({ target: { seconds: 2 }, updateWhenTargetAchieved });
             },
-            { initialProps: true }
+            { initialProps: true },
         );
 
         act(() => {
             const [timer] = result.current;
             timer.start();
 
-            clock.tick(2000);
+            jest.advanceTimersByTime(2000);
         });
 
         expect(result.current[1]).toBeTruthy();
@@ -136,7 +133,7 @@ describe('useTimer hook', () => {
             const [timer] = result.current;
             timer.start();
 
-            clock.tick(2000);
+            jest.advanceTimersByTime(2000);
         });
 
         expect(result.current[1]).toBeFalsy();
@@ -151,7 +148,7 @@ describe('useTimer hook', () => {
             const [timer] = result.current;
             timer.start();
 
-            clock.tick(2000);
+            jest.advanceTimersByTime(2000);
         });
 
         unmount();
