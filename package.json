@@ -41,7 +41,6 @@
         "@types/jest": "^29.5.4",
         "@types/react": "^18.2.21",
         "@types/react-dom": "^18.2.7",
-        "@types/sinon": "^10.0.16",
         "@typescript-eslint/eslint-plugin": "^6.5.0",
         "@typescript-eslint/parser": "^6.5.0",
         "bulma": "^0.9.4",
@@ -61,7 +60,6 @@
         "rollup-plugin-serve": "^2.0.2",
         "rollup-plugin-typescript2": "^0.35.0",
         "sass": "^1.66.1",
-        "sinon": "^15.2.0",
         "tslib": "^2.6.2",
         "typescript": "^5.2.2"
     },
